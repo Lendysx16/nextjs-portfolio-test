@@ -12,14 +12,6 @@ export const metadata: Metadata = {
     title: "Lendy | Portfolio",
     description:
         "Portfolio site for Lendy, a software engineer and designer-photographer.",
-    icons: {
-        icon: "/favicon/favicon.ico",
-    },
-    openGraph: {
-        title: "Lendy | Portfolio",
-        description:
-            "Portfolio site for Lendy, a software engineer and designer-photographer.",
-    },
 };
 
 export default function RootLayout({
