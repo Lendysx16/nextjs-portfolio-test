@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     title: "Lendy | Portfolio",
     description:
         "Portfolio site for Lendy, a software engineer and designer-photographer.",
+    icons: {
+        icon: "/favicon/favicon.png",
+    },
 };
 
 export default function RootLayout({
