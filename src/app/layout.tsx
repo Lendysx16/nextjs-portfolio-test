@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fira_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const mono = Fira_Mono({
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
     icons: {
         icon: "/favicon/favicon.png",
     },
+    openGraph: {
+        title: "Lendy | Portfolio",
+        description:
+            "Portfolio site for Lendy, a software engineer and designer-photographer.",
+    },
 };
 
 export default function RootLayout({
@@ -26,7 +32,10 @@ export default function RootLayout({
             <body
                 className={mono.className + " min-h-screen bg-[#202020] w-full"}
             >
-                <div className="min-h-screen w-100">{children}</div>
+                <div className="min-h-screen w-100">
+                    {children}
+                    <SpeedInsights />
+                </div>
             </body>
         </html>
     );
