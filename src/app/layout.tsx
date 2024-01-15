@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
         "Portfolio site for Lendy, a software engineer and designer-photographer.",
     icons: {
-        icon: "/favicon/favicon.png",
+        icon: "/favicon/favicon.ico",
     },
     openGraph: {
         title: "Lendy | Portfolio",
