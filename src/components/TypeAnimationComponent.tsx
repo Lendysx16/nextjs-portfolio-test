@@ -1,14 +1,13 @@
 "use client";
-import { useEffect, useCallback } from "react";
+import { CSSProperties } from "react";
 import { TypeAnimation } from "react-type-animation";
 
-interface styles extends React.CSSProperties {}
 interface PropsForAnimation {
     sequence: Array<string | number>;
     speed: any;
-    style?: styles;
+    style?: CSSProperties;
 }
-const t: styles = { fontSize: "2em", display: "inline-block" };
+
 const TypeAnimationComponent = ({
     sequence,
     speed,

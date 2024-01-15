@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Image from "next/image";
 import TypeAnimationComponent from "@/components/TypeAnimationComponent";
+import Link from "next/link";
 
 const sequence: Array<string | number> = [
     "Lendy",
@@ -23,24 +24,31 @@ const HeroSection = (): ReactNode => {
                                 Hi I&apos;m
                             </span>
                             <TypeAnimationComponent
+                                style={{
+                                    textWrap: "nowrap",
+                                    textOverflow: "ellipsis",
+                                    overflow: "hidden",
+                                    whiteSpace: "nowrap",
+                                }}
                                 sequence={sequence}
                                 speed={25}
                             />
                         </div>
                     </h1>
                     <p className="text-slate-400 text-base sm:text-lg lg:text-xl mb-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eaque culpa obcaecati consequatur pariatur quibusdam,
-                        expedita accusamus animi enim quo totam nisi molestiae
-                        autem iure unde qui facilis alias? Consequuntur,
-                        nesciunt.
+                        Hello! I am a software engineer and photographer from
+                        Russia. I enjoy writing web-apps in Vue, React and
+                        Express using TypeScript. I am currently looking for new
+                        opportunities.
                     </p>
                     <div className=" mb-6 flex gap-4 flex-col sm:flex-row">
                         <button className=" px-6 py-3 rounded-full w-full sm:w-fit bg-gradient-to-br from-violet-700 via-blue-400 to-red-600 transition-all  text-white self-center duration-700 bg-pos-0 hover:bg-pos-100 bg-size-200">
-                            Hire Me
+                            <a href={"https://t.me/lendysx16"} target="_blank">
+                                Contact me via telegram
+                            </a>
                         </button>
                         <button className="px-6 py-3 rounded-full w-full sm:w-fit bg-gradient-to-br to-violet-700 via-blue-400 from-red-600 transition-all  text-white self-center duration-700 bg-pos-0 hover:bg-pos-100 bg-size-200">
-                            Download CV
+                            Check my resume
                         </button>
                     </div>
                 </div>

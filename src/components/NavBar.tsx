@@ -11,7 +11,7 @@ import {
 
 //next
 import Link from "next/link";
-
+import Image from "next/image";
 //types
 import { NavLinkType } from "@/types/types";
 
@@ -67,9 +67,9 @@ const NavBar = () => {
             <div className="flex flex-wrap items-center justify-between mx-auto p-6 min-h-[12vh] z-10 gradient-border">
                 <Link
                     href={"/"}
-                    className="text-xl md:text-5xl text-white font-bold"
+                    className=" text-white text-xl md:text-5xl font-bold"
                 >
-                    LOGO
+                    LENDY
                 </Link>
                 <div className="block md:hidden">
                     <button
