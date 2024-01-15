@@ -7,9 +7,9 @@ const sequence: Array<string | number> = [
     1000,
     "Gleb",
     1000,
-    "Gay",
+    "Web Developer",
     1000,
-    "Super gay",
+    "Photographer",
     1000,
 ];
 const HeroSection = (): ReactNode => {
