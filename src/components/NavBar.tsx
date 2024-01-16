@@ -11,7 +11,7 @@ import {
 
 //next
 import Link from "next/link";
-import Image from "next/image";
+
 //types
 import { NavLinkType } from "@/types/types";
 
@@ -33,7 +33,12 @@ const navLinksArr: NavLinkType[] = [
         title: "Contact",
         path: "#contact",
     },
+    {
+        title: "Links",
+        path: "#links",
+    },
 ];
+
 const NavBar = () => {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const menuRef = useRef<HTMLDivElement>(null);
@@ -69,7 +74,7 @@ const NavBar = () => {
                     href={"/"}
                     className=" text-white text-xl md:text-5xl font-bold"
                 >
-                    LENDY
+                    lendy
                 </Link>
                 <div className="block md:hidden">
                     <button

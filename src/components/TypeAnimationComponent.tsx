@@ -1,12 +1,6 @@
 "use client";
-import { CSSProperties } from "react";
 import { TypeAnimation } from "react-type-animation";
-
-interface PropsForAnimation {
-    sequence: Array<string | number>;
-    speed: any;
-    style?: CSSProperties;
-}
+import { PropsForAnimation } from "@/types/types";
 
 const TypeAnimationComponent = ({
     sequence,
