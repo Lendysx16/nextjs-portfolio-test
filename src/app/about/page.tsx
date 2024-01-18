@@ -1,12 +1,12 @@
 import React, { ReactNode } from "react";
-import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import Wrapper from "@/components/Wrapper";
-const Home = (): ReactNode => {
+const About = (): ReactNode => {
     return (
         <Wrapper>
-            <HeroSection />
+            <AboutSection />
         </Wrapper>
     );
 };
 
-export default Home;
+export default About;

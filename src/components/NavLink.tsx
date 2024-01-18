@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { Children } from "react";
+import React from "react";
 import { NavLinkProps } from "@/types/types";
 
 const NavLink = ({ href, children }: NavLinkProps) => {

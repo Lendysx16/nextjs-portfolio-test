@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import React, { CSSProperties } from "react";
 
 export type NavLinkType = {
     title: string;
@@ -17,4 +17,17 @@ export interface PropsForAnimation {
     sequence: Array<string | number>;
     speed: any;
     style?: CSSProperties;
+}
+
+export interface TabButtonProps { 
+    isActive: boolean;
+    title: string;
+    onClick: () => void;
+    id: string;
+}
+
+export interface TabData { 
+    title: string;
+    content: React.ReactNode;
+    id: string;
 }

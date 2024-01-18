@@ -22,20 +22,24 @@ import { Bars3Icon } from "@heroicons/react/24/solid";
 
 const navLinksArr: NavLinkType[] = [
     {
+        title: "Home",
+        path: "/",
+    },
+    {
         title: "About",
-        path: "#about",
+        path: "/about",
     },
     {
         title: "Projects",
-        path: "#projects",
+        path: "/projects",
     },
     {
         title: "Contact",
-        path: "#contact",
+        path: "/contact",
     },
     {
         title: "Links",
-        path: "#links",
+        path: "/links",
     },
 ];
 

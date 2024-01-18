@@ -15,7 +15,7 @@ const sequence: Array<string | number> = [
 ];
 const HeroSection = (): ReactNode => {
     return (
-        <section className="container h-full">
+        <section className="container h-full mb-20 sm:mb-16 md:mb-24">
             <div className="grid grid-cols-1 md:grid-cols-12">
                 <div className="col-span-7 place-self-center text-center sm:text-left ">
                     <h1 className="text-white mb-4 lg:text-6xl  text-4xl font-extrabold">
@@ -41,7 +41,7 @@ const HeroSection = (): ReactNode => {
                         Express using TypeScript. I am currently looking for new
                         opportunities.
                     </p>
-                    <div className=" mb-6 flex gap-4 flex-col sm:flex-row">
+                    <div className=" mb-12 md:mb-0 flex gap-4 flex-col sm:flex-row">
                         <button className=" px-6 py-3 rounded-full w-full sm:w-fit bg-gradient-to-br from-violet-700 via-blue-400 to-red-600 transition-all  text-white self-center duration-700 bg-pos-0 hover:bg-pos-100 bg-size-200">
                             <a href={"https://t.me/lendysx16"} target="_blank">
                                 Contact me via telegram
@@ -53,7 +53,7 @@ const HeroSection = (): ReactNode => {
                     </div>
                 </div>
                 <div className="col-span-5 place-self-center">
-                    <div className="rounded-full  relative w-[250px] h-[250px] xl:w-[400px] xl:h-[400px]">
+                    <div className="rounded-full  relative w-[250px] h-[250px] xl:w-[350px] xl:h-[350px]">
                         <Image
                             src={"/images/test.jpg"}
                             alt="image"
