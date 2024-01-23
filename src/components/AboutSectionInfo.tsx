@@ -107,18 +107,16 @@ const AboutSectionInfo = () => {
                 >
                     {TabButtons.find(({ id }) => id === tab)?.content}
                 </div>
-                <div
-                    className=" w-full mt-8 relative pb-8"
-                    onClick={() => {
-                        scrollableEl.current?.scrollBy({
-                            top: 100,
-                            behavior: "smooth",
-                        });
-                    }}
-                >
+                <div className=" w-full mt-8 relative pb-8">
                     <div
                         className="absolute w-full cursor-pointer"
                         id="ifScrollThenShow"
+                        onClick={() => {
+                            scrollableEl.current?.scrollBy({
+                                top: 100,
+                                behavior: "smooth",
+                            });
+                        }}
                     >
                         <ArrowDownIcon
                             className=" mx-auto animate-bounce"
