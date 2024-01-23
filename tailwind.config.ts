@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
     content: [
@@ -14,8 +14,7 @@ const config: Config = {
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
             backgroundSize: {
-              "size-200": "200% 200%",
-
+                "size-200": "200% 200%",
             },
             backgroundPosition: {
                 "pos-0": "0% 0%",
@@ -23,6 +22,6 @@ const config: Config = {
             },
         },
     },
-    plugins: [],
+    plugins: [require("tailwind-scrollbar")],
 };
-export default config
+export default config;

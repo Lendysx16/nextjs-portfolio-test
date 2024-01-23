@@ -1,14 +1,19 @@
 import React, { ReactNode } from "react";
 import NavLink from "@/components/NavLink";
+import { usePathname } from "next/navigation";
 import { MenuOverlayProps } from "@/types/types";
 
 const MenuOverlay = ({ links, className }: MenuOverlayProps): ReactNode => {
+    const pathname = usePathname();
     return (
         <ul className={className}>
             <>
                 {links.map(({ title, path }) => (
                     <li key={title + "Mobile"}>
-                        <NavLink href={path}> {title}</NavLink>
+                        <NavLink href={path} active={pathname === path}>
+                            {" "}
+                            {title}
+                        </NavLink>
                     </li>
                 ))}
             </>

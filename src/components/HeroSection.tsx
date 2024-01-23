@@ -15,7 +15,7 @@ const sequence: Array<string | number> = [
 ];
 const HeroSection = (): ReactNode => {
     return (
-        <section className="container h-full mb-20 sm:mb-16 md:mb-24">
+        <section className="container min-h-[80svh] md:flex md:items-center">
             <div className="grid grid-cols-1 md:grid-cols-12">
                 <div className="col-span-7 place-self-center text-center sm:text-left ">
                     <h1 className="text-white mb-4 lg:text-6xl  text-4xl font-extrabold">

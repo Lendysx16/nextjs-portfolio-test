@@ -11,7 +11,7 @@ import {
 
 //next
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 //types
 import { NavLinkType } from "@/types/types";
 
@@ -44,6 +44,8 @@ const navLinksArr: NavLinkType[] = [
 ];
 
 const NavBar = () => {
+    const pathname = usePathname();
+
     const buttonRef = useRef<HTMLButtonElement>(null);
     const menuRef = useRef<HTMLDivElement>(null);
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -64,13 +66,14 @@ const NavBar = () => {
         }
     }, []);
     useEffect(() => {
+        console.log(pathname);
         document.addEventListener("scroll", () => handleScroll());
         document.addEventListener("click", (e) => HandleClick(e));
         return () => {
             document.removeEventListener("scroll", handleScroll);
             document.removeEventListener("click", (e) => HandleClick(e));
         };
-    }, [isOpen, handleScroll, HandleClick]);
+    }, [isOpen, handleScroll, HandleClick, pathname]);
     return (
         <nav className=" sticky top-0 left-0 right-0 z-10 bg-[#202020] bg-opacity-[1] ">
             <div className="flex flex-wrap items-center justify-between mx-auto p-6 min-h-[12vh] z-10 gradient-border">
@@ -98,7 +101,9 @@ const NavBar = () => {
                     <ul className="flex w-full  gap-1 md:gap-20 md:flex-row flex-col">
                         {navLinksArr.map(({ title, path }) => (
                             <li key={title}>
-                                <NavLink href={path}>{title}</NavLink>
+                                <NavLink href={path} active={pathname === path}>
+                                    {title}
+                                </NavLink>
                             </li>
                         ))}
                     </ul>

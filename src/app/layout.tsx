@@ -10,7 +10,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 //components
 import NavBar from "@/components/NavBar";
-import Wrapper from "@/components/Wrapper";
 
 const mono = Fira_Mono({
     weight: ["400", "700"],
@@ -47,10 +46,10 @@ export default function RootLayout({
                 <body
                     className={
                         mono.className +
-                        " min-h-screen bg-[#202020] w-full scroll-smooth"
+                        " min-h-screen bg-[#202020] w-full scroll-smooth scrollbar-none"
                     }
                 >
-                    <div className="min-h-screen w-100">
+                    <div className="min-h-screen w-100 scroll-bar-none">
                         <main className="flex min-h-full flex-col bg-[#202020] w-full overflow-x-clip scroll-smooth">
                             <NavBar />
                             {children}

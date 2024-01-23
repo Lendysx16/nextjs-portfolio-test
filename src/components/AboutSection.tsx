@@ -3,7 +3,10 @@ import Image from "next/image";
 import AboutSectionInfo from "./AboutSectionInfo";
 export const AboutSection = () => {
     return (
-        <section className="text-white min-h-88 relative" id="about">
+        <section
+            className="text-white min-h-88 relative items-center"
+            id="about"
+        >
             <div className="flex items-center flex-col md:flex-row gap-10 xl:gap-16 sm:py-16 xl:px-16 justify-around h-full md:items-start ">
                 <div className="mx-auto overflow-clip mb-12  md:m-0 rounded-3xl md:aspect-square max-w-[500px] h-full shadow-violet-400 shadow-[0px_0px_100px_-30px_rgba(0,0,0,0.3)]">
                     <Image

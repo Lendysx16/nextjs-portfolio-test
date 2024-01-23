@@ -7,7 +7,7 @@ const notFoundPage = () => {
         <>
             <section
                 className={
-                    "min-h-screen w-full flex relative flex-col bg-[#202020] justify-center "
+                    "min-h-[88svh] w-full flex relative flex-col bg-[#202020] justify-center "
                 }
             >
                 <div className="mx-auto md:ml-36 text-slate-100 gap-10 flex flex-col w-1/2">

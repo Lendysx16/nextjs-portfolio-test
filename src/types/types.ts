@@ -7,10 +7,11 @@ export type NavLinkType = {
 
 export interface NavLinkProps extends React.ComponentPropsWithoutRef<"a"> {
     href: string;
+    active: boolean;
 }
-export interface MenuOverlayProps { 
-    links: NavLinkType[]
-    className?: string
+export interface MenuOverlayProps {
+    links: NavLinkType[];
+    className?: string;
 }
 
 export interface PropsForAnimation {
@@ -19,14 +20,14 @@ export interface PropsForAnimation {
     style?: CSSProperties;
 }
 
-export interface TabButtonProps { 
+export interface TabButtonProps {
     isActive: boolean;
     title: string;
     onClick: () => void;
     id: string;
 }
 
-export interface TabData { 
+export interface TabData {
     title: string;
     content: React.ReactNode;
     id: string;
