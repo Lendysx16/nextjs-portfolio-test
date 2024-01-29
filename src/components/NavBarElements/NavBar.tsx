@@ -2,11 +2,11 @@
 
 import "@/styles/NavBar.css";
 import {
-    SyntheticEvent,
-    useCallback,
-    useEffect,
-    useRef,
-    useState,
+  SyntheticEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
 } from "react";
 
 //next
@@ -21,111 +21,108 @@ import NavLink from "@/components/NavBarElements/NavLink";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 
 const navLinksArr: NavLinkType[] = [
-    {
-        title: "Home",
-        path: "/",
-    },
-    {
-        title: "About",
-        path: "/about",
-    },
-    {
-        title: "Projects",
-        path: "/projects",
-    },
-    {
-        title: "Contact",
-        path: "/contact",
-    },
-    {
-        title: "Links",
-        path: "/links",
-    },
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Projects",
+    path: "/projects",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+  },
+  {
+    title: "Links",
+    path: "/links",
+  },
 ];
 
 const NavBar = () => {
-    const pathname = usePathname();
+  const pathname = usePathname();
 
-    const buttonRef = useRef<HTMLButtonElement>(null);
-    const menuRef = useRef<HTMLDivElement>(null);
-    const [isOpen, setIsOpen] = useState<boolean>(false);
-    const handleScroll = useCallback(() => {
-        if (isOpen) {
-            setTimeout(() => setIsOpen(false), 250);
-        }
-    }, [isOpen]);
-    const HandleOpen = useCallback((e: SyntheticEvent) => {
-        setIsOpen((prev) => !prev);
-    }, []);
-    const HandleClick = useCallback((e: MouseEvent) => {
-        if (
-            !menuRef.current?.contains(e.target as Node) &&
-            !buttonRef.current?.contains(e.target as Node)
-        ) {
-            setIsOpen(false);
-        }
-    }, []);
-    useEffect(() => {
-        console.log(pathname);
-        document.addEventListener("scroll", () => handleScroll());
-        document.addEventListener("click", (e) => HandleClick(e));
-        return () => {
-            document.removeEventListener("scroll", handleScroll);
-            document.removeEventListener("click", (e) => HandleClick(e));
-        };
-    }, [isOpen, handleScroll, HandleClick, pathname]);
-    return (
-        <nav className=" sticky top-0 left-0 right-0 z-10 bg-[#202020] bg-opacity-[1] ">
-            <div className="flex flex-wrap items-center justify-between mx-auto p-6 min-h-[12vh] z-10 gradient-border">
-                <Link
-                    href={"/"}
-                    className=" text-white text-xl md:text-5xl font-bold"
-                >
-                    lendy
-                </Link>
-                <div className="block md:hidden">
-                    <button
-                        className=" flex items-center px-2 py-2 border rounded border-slate-200 text-slate-200 hover:text-white :hover:border-white"
-                        onClick={(e) => HandleOpen(e)}
-                        ref={buttonRef}
-                    >
-                        <Bars3Icon
-                            className={`h-4 w-4 title transition-all duration-700 ${
-                                isOpen ? "transform rotate-[270deg]" : ""
-                            }`}
-                            title="Open Menu"
-                        />
-                    </button>
-                </div>
-                <div className="menu hidden md:block md:w-auto">
-                    <ul className="flex w-full  gap-1 md:gap-20 md:flex-row flex-col">
-                        {navLinksArr.map(({ title, path }) => (
-                            <li key={title}>
-                                <NavLink href={path} active={pathname === path}>
-                                    {title}
-                                </NavLink>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-            <div
-                className={`md:hidden relative mobileMenu duration-700 transition-all ${
-                    isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-                key="mobileMenu"
-                ref={menuRef}
-            >
-                <MenuOverlay
-                    links={navLinksArr}
-                    className={
-                        "min-h-[88vh]  transition-all duration-700 flex flex-col py-4 items-center absolute right-0 top-0 w-40 md:hidden justify-center bg-[#212121] bg-opacity-90 z-[8] " +
-                        `${isOpen ? "" : "translate-x-full"}`
-                    }
-                />
-            </div>
-        </nav>
-    );
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const handleScroll = useCallback(() => {
+    if (isOpen) {
+      setTimeout(() => setIsOpen(false), 250);
+    }
+  }, [isOpen]);
+  const HandleOpen = useCallback((e: SyntheticEvent) => {
+    setIsOpen((prev) => !prev);
+  }, []);
+  const HandleClick = useCallback((e: MouseEvent) => {
+    if (
+      !menuRef.current?.contains(e.target as Node) &&
+      !buttonRef.current?.contains(e.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  }, []);
+  useEffect(() => {
+    console.log(pathname);
+    document.addEventListener("scroll", () => handleScroll());
+    document.addEventListener("click", (e) => HandleClick(e));
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("click", (e) => HandleClick(e));
+    };
+  }, [isOpen, handleScroll, HandleClick, pathname]);
+  return (
+    <nav className=" sticky left-0 right-0 top-0 z-10 bg-[#202020] bg-opacity-[1] ">
+      <div className="gradient-border z-10 mx-auto flex min-h-[12vh] flex-wrap items-center justify-between p-6">
+        <Link href={"/"} className=" text-xl font-bold text-white md:text-5xl">
+          lendy
+        </Link>
+        <div className="block md:hidden">
+          <button
+            className=" :hover:border-white flex items-center rounded border border-slate-200 px-2 py-2 text-slate-200 hover:text-white"
+            onClick={(e) => HandleOpen(e)}
+            ref={buttonRef}
+          >
+            <Bars3Icon
+              className={`title h-4 w-4 transition-all duration-700 ${
+                isOpen ? "rotate-[270deg] transform" : ""
+              }`}
+              title="Open Menu"
+            />
+          </button>
+        </div>
+        <div className="menu hidden md:block md:w-auto">
+          <ul className="flex w-full  flex-col gap-1 md:flex-row md:gap-14 lg:gap-20">
+            {navLinksArr.map(({ title, path }) => (
+              <li key={title}>
+                <NavLink href={path} active={pathname === path}>
+                  {title}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div
+        className={`mobileMenu relative transition-all duration-700 md:hidden ${
+          isOpen ? "visible opacity-100" : "invisible opacity-0"
+        }`}
+        key="mobileMenu"
+        ref={menuRef}
+      >
+        <MenuOverlay
+          links={navLinksArr}
+          className={
+            "absolute  right-0 top-0 z-[8] flex min-h-[88vh] w-40 flex-col items-center justify-center bg-[#212121] bg-opacity-90 py-4 transition-all duration-700 md:hidden " +
+            `${isOpen ? "" : "translate-x-full"}`
+          }
+        />
+      </div>
+    </nav>
+  );
 };
 
 export default NavBar;
