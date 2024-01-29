@@ -32,3 +32,15 @@ export interface TabData {
     content: React.ReactNode;
     id: string;
 }
+
+export interface ProjectCardProps {
+    title: string;
+    description: string;
+    imgUrl: string;
+    gitUrl: string;
+    liveUrl: string;
+}
+export interface ProjectCardData extends ProjectCardProps {
+    id: number;
+    tag: string[];
+}
