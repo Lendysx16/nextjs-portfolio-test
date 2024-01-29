@@ -9,7 +9,7 @@ import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 //components
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/NavBarElements/NavBar";
 
 const mono = Fira_Mono({
     weight: ["400", "700"],

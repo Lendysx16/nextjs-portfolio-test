@@ -16,8 +16,8 @@ import { usePathname } from "next/navigation";
 import { NavLinkType } from "@/types/types";
 
 //components
-import MenuOverlay from "@/components/MenuOverlay";
-import NavLink from "@/components/NavLink";
+import MenuOverlay from "@/components/NavBarElements/MenuOverlay";
+import NavLink from "@/components/NavBarElements/NavLink";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 
 const navLinksArr: NavLinkType[] = [

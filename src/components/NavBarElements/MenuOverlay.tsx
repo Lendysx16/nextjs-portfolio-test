@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import NavLink from "@/components/NavLink";
+import NavLink from "@/components/NavBarElements/NavLink";
 import { usePathname } from "next/navigation";
 import { MenuOverlayProps } from "@/types/types";
 
