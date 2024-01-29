@@ -15,6 +15,7 @@ export const AboutSection = () => {
                         width={600}
                         quality={80}
                         priority={true}
+                        loading="eager"
                         alt="computer"
                         className="w-full h-full object-cover "
                     ></Image>
