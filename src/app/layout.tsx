@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     icon: "./favicon.ico",
   },
   title: "Lendy | Portfolio",
+
+  other: { ["yandex-verification"]: "daefaf9e259bd39e" },
   description: "Portfolio stite",
   openGraph: {
     title: "Lendy | Portfolio",
