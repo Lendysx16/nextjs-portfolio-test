@@ -4,46 +4,44 @@ import Image from "next/image";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 export const ProjectCard = ({
-    imgUrl,
-    title,
-    description,
-    liveUrl,
-    gitUrl,
+  imgUrl,
+  title,
+  description,
+  liveUrl,
+  gitUrl,
 }: ProjectCardProps) => {
-    return (
-        <div>
-            <div className="h-52 md:h-72 relative group">
-                <Image
-                    src={imgUrl}
-                    height={300}
-                    width={300}
-                    quality={90}
-                    alt={title}
-                    className="w-full h-full object-cover rounded-t-xl absolute"
-                ></Image>
-                <div className=" overlay absolute w-full h-full top-0 left-0 bg-[#181818] rounded-t-xl bg-opacity-0 flex group-hover:bg-opacity-80 transition-all duration-500 items-center justify-center gap-8">
-                    <Link
-                        href={gitUrl}
-                        target="_blank"
-                        className=" hidden group-hover:block transition-all duration-500 h-10 w-10 md:w-14 md:h-14 border-2 hover:border-white rounded-full border-[#ADB7BE] group/link relative"
-                    >
-                        <CodeBracketIcon className=" w-5 h-5 md:w-8 md:h-8 text-[#ADB7BE] cursor-pointer absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover/link:text-white transition-all duration-500" />
-                    </Link>
-                    <Link
-                        href={liveUrl}
-                        target="_blank"
-                        className=" hidden group-hover:block transition-all duration-500 h-10 w-10 md:w-14 md:h-14 border-2 hover:border-white rounded-full border-[#ADB7BE] group/link2 relative"
-                    >
-                        <EyeIcon className=" w-5 h-5 md:w-8 md:h-8 text-[#ADB7BE] cursor-pointer absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover/link2:text-white transition-all duration-500" />
-                    </Link>
-                </div>
-            </div>
-            <div className="text-white py-6 px-4 bg-[#181818]">
-                <h5 className="text-xl font-semibold mb-2">{title}</h5>
-                <p className="text-[#ADB7BE]">{description}</p>
-            </div>
+  return (
+    <div className=" rounded-t-xl bg-[#181820]  transition-all hover:-translate-y-1">
+      <div className="group relative h-52 md:h-72 ">
+        <Image
+          src={imgUrl}
+          height={300}
+          width={300}
+          quality={90}
+          alt={title}
+          className="absolute h-full w-full rounded-t-xl object-cover"
+        ></Image>
+        <div className=" overlay absolute left-0 top-0 flex h-full w-full items-center justify-center gap-8 rounded-t-xl bg-[#181818] bg-opacity-0 transition-all group-hover:bg-opacity-80">
+          <Link
+            href={gitUrl}
+            className=" group/link relative hidden h-10 w-10 rounded-full border-2 border-[#ADB7BE] transition-all duration-500 hover:border-white group-hover:block md:h-14 md:w-14"
+          >
+            <CodeBracketIcon className=" absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer text-[#ADB7BE] transition-all duration-500 group-hover/link:text-white md:h-8 md:w-8" />
+          </Link>
+          <Link
+            href={liveUrl}
+            className=" group/link2 relative hidden h-10 w-10 rounded-full border-2 border-[#ADB7BE] transition-all duration-500 hover:border-white group-hover:block md:h-14 md:w-14"
+          >
+            <EyeIcon className=" absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 cursor-pointer text-[#ADB7BE] transition-all duration-500 group-hover/link2:text-white md:h-8 md:w-8" />
+          </Link>
         </div>
-    );
+      </div>
+      <div className=" bg-[#fff] bg-opacity-10 px-4 py-6 text-[#eee]">
+        <h5 className="mb-2 text-xl font-semibold">{title}</h5>
+        <p className=" text-[#ADB7BE]">{description}</p>
+      </div>
+    </div>
+  );
 };
 
 export default ProjectCard;

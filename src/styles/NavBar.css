@@ -1,24 +1,33 @@
 .gradient-border {
     --borderWidth: 1px;
-    background: #1D1F20;
+    background: #15151b;
     z-index: 5;
     border-radius: 0;
 }
 
 .gradient-border:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     height: calc(100% + var(--borderWidth));
     width: calc(100% + var(--borderWidth));
-    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background: linear-gradient(
+        60deg,
+        #f79533,
+        #f37055,
+        #ef4e7b,
+        #a166ab,
+        #5073b8,
+        #1098ad,
+        #07b39b,
+        #6fba82
+    );
 
     z-index: -1;
     animation: animatedgradient 3s ease alternate infinite;
     background-size: 300% 300%;
 }
-
 
 @keyframes animatedgradient {
     0% {
