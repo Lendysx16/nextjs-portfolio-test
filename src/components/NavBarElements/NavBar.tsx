@@ -75,7 +75,7 @@ const NavBar = () => {
     };
   }, [isOpen, handleScroll, HandleClick, pathname]);
   return (
-    <nav className=" sticky left-0 right-0 top-0 z-10 bg-[#202020] bg-opacity-[1] ">
+    <nav className=" sticky left-0 right-0 top-0 z-10 bg-[#121212] bg-opacity-[1] ">
       <div className="gradient-border z-10 mx-auto flex min-h-[12vh] flex-wrap items-center justify-between p-6">
         <Link href={"/"} className=" text-xl font-bold text-white md:text-5xl">
           lendy

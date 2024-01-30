@@ -11,7 +11,7 @@ export const ProjectCard = ({
   gitUrl,
 }: ProjectCardProps) => {
   return (
-    <div className=" rounded-t-xl bg-[#181818] shadow-2xl transition-all hover:-translate-y-1">
+    <div className=" rounded-t-xl bg-[#181820]  transition-all hover:-translate-y-1">
       <div className="group relative h-52 md:h-72 ">
         <Image
           src={imgUrl}
@@ -36,7 +36,7 @@ export const ProjectCard = ({
           </Link>
         </div>
       </div>
-      <div className=" bg-[#181818] px-4 py-6 text-white">
+      <div className=" bg-[#fff] bg-opacity-10 px-4 py-6 text-[#eee]">
         <h5 className="mb-2 text-xl font-semibold">{title}</h5>
         <p className=" text-[#ADB7BE]">{description}</p>
       </div>
