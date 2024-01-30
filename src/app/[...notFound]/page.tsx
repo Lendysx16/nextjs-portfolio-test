@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import { Metadata } from "next";
 const notFoundPage = () => {
   const h1Class = "font-bold text-[30px] sm:text-[50px] md:text-[70px]";
   return (
@@ -26,3 +26,8 @@ const notFoundPage = () => {
 };
 
 export default notFoundPage;
+
+export const metadata: Metadata = {
+  title: "Lendy | Not Found",
+  description: "Page not found",
+};
