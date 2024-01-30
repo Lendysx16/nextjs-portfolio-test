@@ -13,7 +13,7 @@ const nextConfig = {
   },
   headers: () => [
     {
-      source: "/projects",
+      source: "/:path",
       headers: [
         {
           key: "Cache-Control",

@@ -1,4 +1,4 @@
-import { getProjectsData } from "@/utils/getProjectsData";
+import getProjectsData from "@/utils/getProjectsData";
 import React from "react";
 import ProjectCard from "./ProjectCard";
 

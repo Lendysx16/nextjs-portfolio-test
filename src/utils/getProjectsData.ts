@@ -3,7 +3,8 @@ import "server-only";
 import { ProjectCardData, NotionResponceType } from "@/types/types";
 import { Client } from "@notionhq/client";
 
-export const getProjectsData = async (): Promise<ProjectCardData[]> => {
+export default async function getProjectsData(): Promise<ProjectCardData[]> {
+  const _cookies = {};
   const NOTION_KEY = process.env.NOTION_TOKEN;
   const notion = new Client({ auth: NOTION_KEY });
   const myProjects = await notion.databases.query({
@@ -29,4 +30,4 @@ export const getProjectsData = async (): Promise<ProjectCardData[]> => {
   }
 
   return ArrWithProjects;
-};
+}
