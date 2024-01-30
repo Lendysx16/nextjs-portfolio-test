@@ -1,10 +1,10 @@
 import "server-only";
-
-import { ProjectCardData, NotionResponceType } from "@/types/types";
+import { NotionResponceType, ProjectCardData } from "@/types/types";
 import { Client } from "@notionhq/client";
+import { cookies } from "next/headers";
 
 export default async function getProjectsData(): Promise<ProjectCardData[]> {
-  const _cookies = {};
+  const _cookies = cookies();
   const NOTION_KEY = process.env.NOTION_TOKEN;
   const notion = new Client({ auth: NOTION_KEY });
   const myProjects = await notion.databases.query({
