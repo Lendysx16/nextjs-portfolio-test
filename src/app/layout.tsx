@@ -17,10 +17,12 @@ const mono = Fira_Mono({
   display: "swap",
 });
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lendysx16.vercel.app"),
+  metadataBase: new URL("https://lendysx16.ru"),
+  icons: {
+    icon: "./favicon.ico",
+  },
   title: "Lendy | Portfolio",
-  description:
-    "Portfolio site for Lendy, a web-developer and designer-photographer.",
+  description: "Portfolio stite",
   openGraph: {
     title: "Lendy | Portfolio",
     description:
