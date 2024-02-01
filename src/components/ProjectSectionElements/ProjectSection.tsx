@@ -1,30 +1,23 @@
-import getProjectsData from "@/utils/getProjectsData";
-import React from "react";
-import ProjectCard from "./ProjectCard";
+import React, { Suspense } from "react";
+import { ProjectDataList } from "./ProjectDataList";
 
 const ProjectSection = async () => {
-  const ProjectsData = await getProjectsData();
-  return (
-    <>
-      <h2 className=" mb-8 mt-4 text-center text-4xl font-bold text-white">
-        My Projects
-      </h2>
-      <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 xl:grid-cols-3">
-        {ProjectsData.map(
-          ({ id, title, description, imgUrl, gitUrl, liveUrl }) => (
-            <ProjectCard
-              key={id}
-              title={title}
-              description={description}
-              imgUrl={imgUrl}
-              gitUrl={gitUrl}
-              liveUrl={liveUrl}
-            />
-          ),
-        )}
-      </div>
-    </>
-  );
+    return (
+        <>
+            <h2 className=" mb-8 mt-4 text-center text-4xl font-bold text-white">
+                My Projects
+            </h2>
+            <Suspense
+                fallback={
+                    <div className="text-white text-center text-3xl font-bold mt-10">
+                        Loading...
+                    </div>
+                }
+            >
+                <ProjectDataList />
+            </Suspense>
+        </>
+    );
 };
 
 export default ProjectSection;
