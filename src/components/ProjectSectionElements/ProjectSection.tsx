@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { ProjectDataList } from "./ProjectDataList";
+import ProjectDataList from "./ProjectDataList";
 
 const ProjectSection = async () => {
     return (
