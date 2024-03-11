@@ -95,7 +95,7 @@ const AboutSectionInfo = () => {
         <div className=" flex h-full max-w-[600px] flex-col gap-8 lg:text-lg xl:text-xl">
             <h2 className="text-center text-4xl font-bold">About me</h2>
             <p className=" text-justify text-slate-400">
-                Hello! I'm a passionate web developer. My journey in the tech
+                Hello! I am a passionate web developer. My journey in the tech
                 world is driven by a curiosity to explore and master new
                 technologies, which has led me to delve into the realms of React
                 and Express. Beyond the web, my technical toolkit includes a

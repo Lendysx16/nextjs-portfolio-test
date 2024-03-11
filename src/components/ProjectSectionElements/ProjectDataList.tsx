@@ -3,12 +3,9 @@ import { ProjectCardData } from "@/types/types";
 const getProjectsData = async () => {
     "use server";
     try {
-        const response = await fetch(
-            "http://127.0.0.1:3000/api/getNotionData",
-            {
-                cache: "no-store",
-            },
-        );
+        const response = await fetch("/api/getNotionData", {
+            cache: "no-store",
+        });
         if (response.ok) {
             const data = await response.json();
 
