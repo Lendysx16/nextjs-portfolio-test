@@ -9,36 +9,47 @@ const TabButtons: TabData[] = [
         title: "Skills",
         content: (
             <>
-                <div>
-                    I have an experience with react, vue3, TypeScript. In my
-                    work I used MySql and Postgresql, both with Prisma orm.
-                </div>
-                <div>
-                    I have an experience with react, vue3, TypeScript. In my
-                    work I used MySql and Postgresql, both with Prisma orm.
-                </div>
-                <div>
-                    I have an experience with react, vue3, TypeScript. In my
-                    work I used MySql and Postgresql, both with Prisma orm.
-                </div>
-                <div>
-                    I have an experience with react, vue3, TypeScript. In my
-                    work I used MySql and Postgresql, both with Prisma orm.
-                </div>
+                <ul className="grid grid-cols-3">
+                    <li>C++ </li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>ReactJS</li>
+                    <li>NextJS</li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                </ul>
             </>
         ),
     },
     {
         id: "experience",
         title: "Experience",
-        content: <div>No experience blin</div>,
+        content: (
+            <div className="text-sm">
+                I had an experience with JQuery, Express + handlebars, sequilize
+                and typeorm while working on{" "}
+                <a
+                    href="https://vergomusic.com"
+                    target="_blank"
+                    className="font-medium text-blue-200"
+                >
+                    vergomusic
+                </a>
+                <br />
+                For databases I used MySql and PostgreSql. Also for deployment i
+                used Nginx and docker-compose.
+            </div>
+        ),
     },
     {
         id: "education",
         title: "Education",
         content: (
-            <ul className="list-decimal">
-                <li>Saint Petersburg State University (2021 - 2025)</li>
+            <ul className="text-sm">
+                <li>
+                    Saint Petersburg State University 2021 - 2025. Faculty of
+                    Applied Mathematics and Control Processes.
+                </li>
             </ul>
         ),
     },
@@ -52,7 +63,7 @@ const AboutSectionInfo = () => {
         (id: string) => {
             startTransition(() => setTab(id));
         },
-        [startTransition, setTab]
+        [startTransition, setTab],
     );
 
     const HandleScroll = useCallback(() => {
@@ -81,15 +92,16 @@ const AboutSectionInfo = () => {
         };
     }, [tab, HandleScroll]);
     return (
-        <div className=" flex flex-col gap-8 h-full xl:text-xl lg:text-lg max-w-[350px]">
-            <h2 className="text-4xl font-bold text-center">About me</h2>
+        <div className=" flex h-full max-w-[600px] flex-col gap-8 lg:text-lg xl:text-xl">
+            <h2 className="text-center text-4xl font-bold">About me</h2>
             <p className=" text-justify text-slate-400">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Quaerat voluptatibus quasi assumenda repellat minus odit,
-                praesentium laborum quae aperiam provident in nostrum sequi
-                nulla sint eligendi incidunt inventore earum perferendis.
+                Hello! I am a passionate web developer. My journey in the tech
+                world is driven by a curiosity to explore and master new
+                technologies, which has led me to delve into the realms of React
+                and Express. Beyond the web, my technical toolkit includes a
+                strong foundation in C++ and Python.
             </p>
-            <div className="flex flex-row mt-8 gap-3 justify-between md:justify-start">
+            <div className="mt-8 flex w-full flex-row  justify-between md:justify-around">
                 {TabButtons.map(({ title, id }) => (
                     <TabButton
                         key={id}
@@ -100,14 +112,14 @@ const AboutSectionInfo = () => {
                     />
                 ))}
             </div>
-            <div className=" h-40  scrollbar-none relative">
+            <div className=" scrollbar-none  relative h-40">
                 <div
-                    className="h-32 overflow-y-scroll text-ellipsis text-wrap scrollbar-none"
+                    className="scrollbar-none h-32 overflow-y-scroll text-ellipsis text-wrap"
                     ref={scrollableEl}
                 >
                     {TabButtons.find(({ id }) => id === tab)?.content}
                 </div>
-                <div className=" w-full mt-8 relative pb-8">
+                <div className=" relative mt-8 w-full pb-8">
                     <div className="absolute w-full " id="ifScrollThenShow">
                         <ArrowDownIcon
                             onClick={() => {

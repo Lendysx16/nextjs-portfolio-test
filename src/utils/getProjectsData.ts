@@ -1,5 +1,5 @@
 import "server-only";
-import { NotionResponceType, ProjectCardData } from "@/types/types";
+import { NotionResponseType, ProjectCardData } from "@/types/types";
 import { Client } from "@notionhq/client";
 // import { cookies } from "next/headers";
 import { unstable_noStore as noStore } from "next/cache";
@@ -19,7 +19,7 @@ export default async function getProjectsData(): Promise<ProjectCardData[]> {
 
     // @ts-ignore
     for (const { properties } of results) {
-        const data = properties as NotionResponceType;
+        const data = properties as NotionResponseType;
         ArrWithProjects.push({
             title: data.Title.title[0].plain_text,
             imgUrl: data.imgUrl.url,

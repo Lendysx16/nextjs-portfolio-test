@@ -1,7 +1,7 @@
-import React, { ReactNode } from "react";
 import HeroSection from "@/components/HeroSection";
 import Wrapper from "@/components/Wrapper";
-const Home = (): ReactNode => {
+import { fetchUrl } from "@/utils/constVars";
+const Home = async () => {
     return (
         <Wrapper>
             <HeroSection />
