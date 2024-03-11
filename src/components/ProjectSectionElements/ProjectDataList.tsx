@@ -1,23 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import { ProjectCardData } from "@/types/types";
-const getProjectsData = async () => {
-    "use server";
-    try {
-        const response = await fetch(
-            "http://127.0.0.1:3000/api/getNotionData",
-            {
-                cache: "no-store",
-            },
-        );
-        if (response.ok) {
-            const data = await response.json();
-
-            return data as ProjectCardData[];
-        }
-    } catch (error) {
-        throw error;
-    }
-};
+import getProjectsData from "@/utils/getProjectsData";
 
 const ProjectDataList = async () => {
     const ProjectsData = await getProjectsData();
