@@ -1,27 +1,27 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        port: "",
-        pathname: "/**",
-      },
-    ],
-  },
-  headers: () => [
-    {
-      source: "/:path",
-      headers: [
-        {
-          key: "Cache-Control",
-          value: "no-store",
-        },
-      ],
+    reactStrictMode: false,
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "images.unsplash.com",
+                port: "",
+                pathname: "/**",
+            },
+        ],
     },
-  ],
+    headers: () => [
+        {
+            source: "/:path",
+            headers: [
+                {
+                    key: "Cache-Control",
+                    value: "no-store",
+                },
+            ],
+        },
+    ],
 };
 
 module.exports = nextConfig;
