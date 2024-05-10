@@ -8,7 +8,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: NextRequest) {
     try {
         const props = (await req.json()) as EmailTemplateProps;
-        console.log(props);
         const data = await resend.emails.send({
             from: "dev@lendysx16.ru",
             to: ["sarovgleb@gmail.com"],

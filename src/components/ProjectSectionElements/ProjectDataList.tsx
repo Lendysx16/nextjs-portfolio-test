@@ -1,23 +1,15 @@
-import ProjectCard from "./ProjectCard";
-import getProjectsData from "@/utils/getProjectsData";
+import { getProjectsData } from "@/utils/databaseActions";
+import ProjectDataListByTags from "./ProjectDataListByTags";
 
 const ProjectDataList = async () => {
     const ProjectsData = await getProjectsData();
 
     return (
-        <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 xl:grid-cols-3">
-            {ProjectsData?.map(
-                ({ id, title, description, imgUrl, gitUrl, liveUrl }) => (
-                    <ProjectCard
-                        key={id}
-                        title={title}
-                        description={description}
-                        imgUrl={imgUrl}
-                        gitUrl={gitUrl}
-                        liveUrl={liveUrl}
+        <div className="">
+                    <ProjectDataListByTags
+                    props={ProjectsData}
                     />
-                ),
-            )}
+            
         </div>
     );
 };

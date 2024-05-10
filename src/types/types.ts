@@ -35,14 +35,17 @@ export interface TabData {
 
 export interface ProjectCardProps {
     title: string;
-    description: string;
-    imgUrl: string;
-    gitUrl: string;
-    liveUrl: string;
+    description: string | null;
+    imgUrl: string | null;
+    gitUrl: string | null;
+    liveUrl: string | null;
 }
-export interface ProjectCardData extends ProjectCardProps {
-    id: string;
-    tags: string[];
+
+export interface ProjectCardProperties extends ProjectCardProps {
+    id: number;
+}
+export interface ProjectCardData {
+    [key: string]: ProjectCardProperties[];
 }
 
 export type NotionResponseType = {
