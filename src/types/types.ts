@@ -35,14 +35,14 @@ export interface TabData {
 
 export interface ProjectCardProps {
     title: string;
-    description: string;
-    imgUrl: string;
-    gitUrl: string;
-    liveUrl: string;
+    description: string | null;
+    imgUrl: string | null;
+    gitUrl: string | null;
+    liveUrl: string | null;
 }
 
 export interface ProjectCardProperties extends ProjectCardProps {
-    id: string;
+    id: number;
 }
 export interface ProjectCardData {
     [key: string]: ProjectCardProperties[];

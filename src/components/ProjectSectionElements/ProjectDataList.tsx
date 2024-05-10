@@ -1,5 +1,5 @@
+import { getProjectsData } from "@/utils/databaseActions";
 import ProjectDataListByTags from "./ProjectDataListByTags";
-import getProjectsData from "@/utils/getProjectsData";
 
 const ProjectDataList = async () => {
     const ProjectsData = await getProjectsData();
@@ -9,6 +9,7 @@ const ProjectDataList = async () => {
                     <ProjectDataListByTags
                     props={ProjectsData}
                     />
+            
         </div>
     );
 };

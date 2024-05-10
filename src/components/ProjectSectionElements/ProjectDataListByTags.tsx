@@ -6,7 +6,7 @@ import ProjectCard from "./ProjectCard";
 
 const ProjectDataListByTags = ({ props }: { props: ProjectCardData }) => {
     const allTags = Object.keys(props);
-    console.log(allTags);
+    
     const [selectedTag, setSelectedTag] = useState(allTags[0]);
 
     const allProjects = props[selectedTag];
@@ -25,7 +25,7 @@ const ProjectDataListByTags = ({ props }: { props: ProjectCardData }) => {
                 ))}
             </div>
             <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 xl:grid-cols-3">
-                {allProjects.map((project) => <ProjectCard key={project.id} {...project} />)}
+                {allProjects.map((project) => selectedTag === "web" ? <ProjectCard key={project.id} {...project}/>: "not ready yet")}
             </div>
         </>
     );
