@@ -11,7 +11,7 @@ export const ProjectCard = ({
     gitUrl,
 }: ProjectCardProps) => {
     return (
-        <div className=" rounded-t-xl bg-[#181820]  transition-all hover:-translate-y-1 bg-[#fff] bg-opacity-10">
+        <div className=" rounded-t-xl transition-all hover:-translate-y-1 bg-[#fff] bg-opacity-10">
             <div className="group relative h-52 md:h-72 ">
                 <Image
                     src={imgUrl}

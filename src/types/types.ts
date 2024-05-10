@@ -40,9 +40,12 @@ export interface ProjectCardProps {
     gitUrl: string;
     liveUrl: string;
 }
-export interface ProjectCardData extends ProjectCardProps {
+
+export interface ProjectCardProperties extends ProjectCardProps {
     id: string;
-    tags: string[];
+}
+export interface ProjectCardData {
+    [key: string]: ProjectCardProperties[];
 }
 
 export type NotionResponseType = {
