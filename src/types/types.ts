@@ -48,55 +48,6 @@ export interface ProjectCardData {
     [key: string]: ProjectCardProperties[];
 }
 
-export type NotionResponseType = {
-    id: {
-        id: string;
-        type: "unique_id";
-        unique_id: {
-            prefix: string;
-            number: number;
-        };
-    };
-    Description: {
-        id: string;
-        type: string;
-        rich_text: any;
-    };
-    imgUrl: {
-        id: string;
-        type: "url";
-        url: string;
-    };
-    gitUrl: {
-        id: string;
-        type: "url";
-        url: string;
-    };
-    liveUrl: {
-        id: string;
-        type: "url";
-        url: string;
-    };
-    tags: {
-        id: string;
-        type: "multi_select";
-        multi_select: { id: string; name: string; color: string }[];
-    };
-    Title: {
-        id: string;
-        type: "title";
-        title: {
-            type: string;
-            text: {
-                content: string;
-                link: null | string;
-            };
-            annotations: any;
-            plain_text: string;
-            href: null | string;
-        }[];
-    };
-};
 
 export interface EmailTemplateProps {
     email: string;
