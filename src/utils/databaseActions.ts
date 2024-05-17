@@ -1,19 +1,24 @@
 import { ProjectCardData } from "@/types/types";
 import prisma from "./prisma";
 
-export const getProjectsData = async () => { 
-    const projects = await prisma.projects.findMany();
+export const getProjectsData = async () => {
+    throw "123";
+    try {
+        const projects = await prisma.projects.findMany();
 
-    const arrByTags: ProjectCardData = {};
+        const arrByTags: ProjectCardData = {};
 
-    for (const el of projects) {
-        if (!arrByTags[el.tag]) {
-            arrByTags[el.tag] = [el]
+        for (const el of projects) {
+            if (!arrByTags[el.tag]) {
+                arrByTags[el.tag] = [el]
+            }
+            else {
+                arrByTags[el.tag].push(el);
+            }
         }
-        else { 
-            arrByTags[el.tag].push(el);
-        }
+
+        return arrByTags;
+    } catch (error) {
+        throw error;
     }
-
-    return arrByTags;
 }
