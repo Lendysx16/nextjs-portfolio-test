@@ -2,7 +2,6 @@ import { ProjectCardData } from "@/types/types";
 import prisma from "./prisma";
 
 export const getProjectsData = async () => {
-    throw "123";
     try {
         const projects = await prisma.projects.findMany();
 
